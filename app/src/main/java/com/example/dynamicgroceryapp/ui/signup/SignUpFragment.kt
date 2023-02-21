@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.dynamicgroceryapp.R
+import com.example.dynamicgroceryapp.databinding.FragmentLoginBinding
+import com.example.dynamicgroceryapp.databinding.FragmentSignupBinding
 
 class SignUpFragment : Fragment() {
 
@@ -15,6 +17,7 @@ class SignUpFragment : Fragment() {
     }
 
     private lateinit var viewModel: SignUpViewModel
+    private lateinit var binding: FragmentSignupBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,8 +28,16 @@ class SignUpFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_signup, container, false)
+    ): View? {
+
+        binding = FragmentSignupBinding.inflate(inflater, container, false)
+
+        binding.signupButton.setOnClickListener{
+
+        }
+
+        return binding.root
+
     }
 
 }

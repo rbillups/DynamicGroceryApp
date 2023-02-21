@@ -16,6 +16,7 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.dynamicgroceryapp.databinding.FragmentLoginBinding
 
 import com.example.dynamicgroceryapp.R
@@ -34,7 +35,9 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
 
         binding.createAccountButton.setOnClickListener{
-
+                view: View->
+            view.findNavController()
+                .navigate(R.id.action_loginFragment_to_signUpFragment)
         }
 
 

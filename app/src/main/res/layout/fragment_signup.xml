@@ -8,13 +8,85 @@
     tools:context=".ui.signup.SignUpFragment">
 
     <TextView
-        android:id="@+id/message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SignUpFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/signUpLabel"
+        android:layout_width="229dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="44dp"
+        android:text="Sign Up"
+        android:textAlignment="center"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/textFieldUsername"
+        android:layout_width="297dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="@string/prompt_username"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signUpLabel" />
+
+    <EditText
+        android:id="@+id/textFieldPassword"
+        android:layout_width="297dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="@string/prompt_password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldUsername" />
+
+    <EditText
+        android:id="@+id/textFieldName"
+        android:layout_width="297dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="@string/prompt_name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldPassword" />
+
+    <EditText
+        android:id="@+id/textFieldEmail"
+        android:layout_width="297dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="@string/prompt_email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldName" />
+
+    <EditText
+        android:id="@+id/textFieldPhone"
+        android:layout_width="297dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="@string/prompt_number"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldEmail" />
+
+    <Button
+        android:id="@+id/signup_button"
+        android:layout_width="148dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="28dp"
+        android:text="Sign Up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldPhone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
