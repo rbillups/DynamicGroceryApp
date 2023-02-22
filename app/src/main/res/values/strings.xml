@@ -18,5 +18,6 @@
     <string name="ForgotPassword">Forgot Password</string>
     <string name="prompt_passwordRecovery">Password Recovery</string>
     <string name="recover">Recover</string>
+    <string name="addfriend">Add Friend</string>
 
 </resources>

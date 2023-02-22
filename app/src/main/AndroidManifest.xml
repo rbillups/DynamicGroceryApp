@@ -13,6 +13,9 @@
         android:theme="@style/Theme.DynamicGroceryApp"
         tools:targetApi="31">
         <activity
+            android:name=".AddFriends"
+            android:exported="false" />
+        <activity
             android:name=".accountRecovery"
             android:exported="false" />
         <activity
