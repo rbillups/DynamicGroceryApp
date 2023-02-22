@@ -13,8 +13,10 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="Logo" />
-    <string name="CreateAccount">CreateAccount</string>
+    <string name="CreateAccount">Create Account</string>
     <string name="SignIn">Sign In</string>
     <string name="ForgotPassword">Forgot Password</string>
+    <string name="prompt_passwordRecovery">Password Recovery</string>
+    <string name="recover">Recover</string>
 
 </resources>

@@ -40,6 +40,12 @@ class LoginFragment : Fragment() {
                 .navigate(R.id.action_loginFragment_to_signUpFragment)
         }
 
+        binding.forgotPassword.setOnClickListener{
+                view: View->
+            view.findNavController()
+                .navigate(R.id.action_loginFragment_to_accountRecoveryFragment)
+        }
+
 
         return binding.root
 
