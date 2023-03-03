@@ -40,35 +40,40 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
+        //Creates authentication instance
         auth = FirebaseAuth.getInstance()
 
+        //Email and password inputs from user
         val email = binding.loginEmail
         val password = binding.loginPassword
 
-        binding.createAccountButton.setOnClickListener{
-                view: View->
+        //Listener for create account button. Sends user to registration page.
+        binding.createAccountButton.setOnClickListener { view: View ->
             view.findNavController()
                 .navigate(R.id.action_loginFragment_to_signUpFragment)
         }
 
-        binding.forgotPassword.setOnClickListener{
-                view: View->
+        //Listener for forgot password. Sends user to recovery page.
+        binding.forgotPassword.setOnClickListener { view: View ->
             view.findNavController()
                 .navigate(R.id.action_loginFragment_to_accountRecoveryFragment)
         }
 
-        binding.signInButton.setOnClickListener{
+        //Listener for sign in button.
+        binding.signInButton.setOnClickListener {
+            //Converts
             val email: String = email.text.toString()
             val password: String = password.text.toString()
             var stop: Boolean = true
 
-            if (email.isEmpty() || password.isEmpty()){
+            //Checks to see if the email or password field is empty.
+            if (email.isEmpty() || password.isEmpty()) {
                 showToastMessage(requireContext(), "Invalid Email/Password")
-            }
-            else {
+            } else {
                 stop = false
             }
 
+            //If both fields are not empty method to sign in is called.
             if (!stop) {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
@@ -104,6 +109,7 @@ class LoginFragment : Fragment() {
 
 
 }
-data class LoginInfo(val username: String, val passwordAuthentication: PasswordAuthentication){
+
+data class LoginInfo(val username: String, val passwordAuthentication: PasswordAuthentication) {
 
 }
