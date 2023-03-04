@@ -9,7 +9,7 @@ import com.example.dynamicgroceryapp.R
 import com.example.dynamicgroceryapp.databinding.FragmentAppMainBinding
 
 
-class appDashFragment : Fragment() {
+class appMainFragment : Fragment() {
     //private val viewModel: appDashFragment by viewModels()
 
     private lateinit var binding: FragmentAppMainBinding
