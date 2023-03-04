@@ -19,10 +19,6 @@
             android:name=".accountRecovery"
             android:exported="false" />
         <activity
-            android:name=".SignUp"
-            android:theme="@style/Theme.Material3.Light.NoActionBar"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

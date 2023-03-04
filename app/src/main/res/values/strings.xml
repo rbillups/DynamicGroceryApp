@@ -19,5 +19,7 @@
     <string name="prompt_passwordRecovery">Password Recovery</string>
     <string name="recover">Recover</string>
     <string name="addfriend">Add Friend</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -1,33 +1,16 @@
 package com.example.dynamicgroceryapp.ui.login
 
-import android.content.ContentValues.TAG
 import android.content.Context
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.annotation.StringRes
-import androidx.fragment.app.Fragment
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextUtils
-import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
 import android.widget.Toast
-import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.example.dynamicgroceryapp.databinding.FragmentLoginBinding
-
 import com.example.dynamicgroceryapp.R
+import com.example.dynamicgroceryapp.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-import java.net.PasswordAuthentication
 
 class LoginFragment : Fragment() {
 
@@ -41,6 +24,8 @@ class LoginFragment : Fragment() {
     ): View? {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         auth = FirebaseAuth.getInstance()
+
+
 
         val email = binding.loginEmail
         val password = binding.loginPassword
@@ -57,7 +42,8 @@ class LoginFragment : Fragment() {
                 .navigate(R.id.action_loginFragment_to_accountRecoveryFragment)
         }
 
-        binding.signInButton.setOnClickListener{
+        binding.signInButton.setOnClickListener{view->
+
             val email: String = email.text.toString()
             val password: String = password.text.toString()
             var stop: Boolean = true
@@ -74,6 +60,7 @@ class LoginFragment : Fragment() {
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             showToastMessage(requireContext(), "Signed in Successfully")
+                            view.findNavController().navigate(R.id.action_loginFragment_to_appMainFragment)
 
                         } else {
                             showToastMessage(requireContext(), "Invalid Email/Password")
@@ -102,8 +89,5 @@ class LoginFragment : Fragment() {
         toast.show()
     }
 
-
-}
-data class LoginInfo(val username: String, val passwordAuthentication: PasswordAuthentication){
 
 }
