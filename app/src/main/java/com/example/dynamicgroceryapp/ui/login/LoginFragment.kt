@@ -73,12 +73,12 @@ class LoginFragment : Fragment() {
                 stop = false
             }
 
-            //If both fields are not empty method to sign in is called.
             if (!stop) {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             showToastMessage(requireContext(), "Signed in Successfully")
+                            view.findNavController().navigate(R.id.action_loginFragment_to_appMainFragment)
 
                         } else {
                             showToastMessage(requireContext(), "Invalid Email/Password")

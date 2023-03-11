@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_loginFragment_to_accountRecoveryFragment"
             app:destination="@id/accountRecoveryFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_appMainFragment"
+            app:destination="@id/appMainFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -32,4 +35,9 @@
         android:name="com.example.dynamicgroceryapp.ui.accountrecovery.AccountRecoveryFragment"
         android:label="fragment_recovery"
         tools:layout="@layout/fragment_recovery" />
+    <fragment
+        android:id="@+id/appMainFragment"
+        android:name="com.example.dynamicgroceryapp.ui.appMain.appMainFragment"
+        android:label="fragment_app_main"
+        tools:layout="@layout/fragment_app_main" />
 </navigation>
