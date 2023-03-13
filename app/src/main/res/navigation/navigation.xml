@@ -19,7 +19,9 @@
             app:destination="@id/accountRecoveryFragment" />
         <action
             android:id="@+id/action_loginFragment_to_appMainFragment"
-            app:destination="@id/appMainFragment" />
+            app:destination="@id/appMainFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
