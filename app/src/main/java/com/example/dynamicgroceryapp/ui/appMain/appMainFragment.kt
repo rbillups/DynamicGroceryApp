@@ -51,6 +51,17 @@ class appMainFragment : Fragment() {
             true
         }
 
+        val addButton: Button = binding.addButton
+        val addGroup: Button = binding.addGroup
+        val addList: Button = binding.addList
+
+        addButton.setOnClickListener{
+            addGroup.visibility = View.VISIBLE
+            addList.visibility = View.VISIBLE
+        }
+
+
+
         return binding.root
     }
 
