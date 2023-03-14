@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.dynamicgroceryapp.R
 import com.example.dynamicgroceryapp.databinding.FragmentAppMainBinding
@@ -48,6 +50,17 @@ class appMainFragment : Fragment() {
             }
             true
         }
+
+        val addButton: Button = binding.addButton
+        val addGroup: Button = binding.addGroup
+        val addList: Button = binding.addList
+
+        addButton.setOnClickListener{
+            addGroup.visibility = View.VISIBLE
+            addList.visibility = View.VISIBLE
+        }
+
+
 
         return binding.root
     }
