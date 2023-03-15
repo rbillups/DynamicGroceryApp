@@ -33,42 +33,7 @@
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/my_navigation_items" />
 
-    <Button
-        android:id="@+id/addButton"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/plus"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
-        app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/addList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/list"
-        android:textSize="12sp"
-        android:theme="@style/Button.Test"
-        app:layout_constraintBottom_toTopOf="@+id/addButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:visibility="gone" />
-
-    <Button
-        android:id="@+id/addGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="10dp"
-        android:text="@string/group"
-        android:textSize="12sp"
-        android:theme="@style/Button.Test"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
-        app:layout_constraintRight_toLeftOf="@+id/addButton"
-        tools:visibility="gone" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
