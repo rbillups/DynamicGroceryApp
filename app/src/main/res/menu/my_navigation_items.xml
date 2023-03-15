@@ -9,6 +9,14 @@
             android:id="@+id/groupBottomNav"
             android:title="@string/Groups"
             android:icon="@drawable/groups"/>
+        <item
+            android:id="@+id/friendsBottomNav"
+            android:title="@string/friends"
+            android:icon="@drawable/friends"/>
+        <item
+            android:id="@+id/profileBottomNav"
+            android:title="@string/profile"
+            android:icon="@drawable/profile"/>
 
 
 

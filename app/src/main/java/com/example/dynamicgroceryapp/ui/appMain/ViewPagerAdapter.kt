@@ -8,7 +8,9 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapte
 
     private val fragments: List<Fragment> = listOf(
         listFragment(),
-        groupsFragment()
+        groupsFragment(),
+        friendsFragment(),
+        profileFragment()
     )
 
     override fun getItemCount(): Int = fragments.size

@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.dynamicgroceryapp.R
 import com.example.dynamicgroceryapp.databinding.FragmentAppMainBinding
@@ -37,7 +36,7 @@ class appMainFragment : Fragment() {
         val viewPager: ViewPager2 = binding.viewPager2
         val bottomNavigationView: BottomNavigationView = binding.bottomNav
 
-        //attach fragment ativity to adapter
+        //attach fragment activity to adapter
         val activity = requireActivity()
         val viewPagerAdapter = ViewPagerAdapter(activity)
         viewPager.adapter = viewPagerAdapter
@@ -47,6 +46,8 @@ class appMainFragment : Fragment() {
             when (menuItem.itemId) {
                 R.id.listBottomNav -> viewPager.currentItem = 0
                 R.id.groupBottomNav -> viewPager.currentItem = 1
+                R.id.friendsBottomNav -> viewPager.currentItem = 2
+                R.id.profileBottomNav -> viewPager.currentItem = 3
             }
             true
         }
