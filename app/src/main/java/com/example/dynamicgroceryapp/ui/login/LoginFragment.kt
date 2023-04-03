@@ -46,6 +46,7 @@ class LoginFragment : Fragment() {
         //Listener for sign in button.
         binding.signInButton.setOnClickListener {
             //Converts
+
             val email: String = email.text.toString()
             val password: String = password.text.toString()
             var stop: Boolean = true

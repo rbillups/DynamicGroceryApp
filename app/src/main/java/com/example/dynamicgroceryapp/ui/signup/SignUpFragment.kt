@@ -10,8 +10,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import com.example.dynamicgroceryapp.R
 import com.example.dynamicgroceryapp.databinding.FragmentSignupBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 
 class SignUpFragment : Fragment() {
@@ -55,6 +58,9 @@ class SignUpFragment : Fragment() {
             val phoneNum: String = editTextPhone.text.toString()
             var stop: Boolean = true
 
+
+
+
             //Going to add more conditions
             //conditionals for user input
             if (username.isEmpty()) {
@@ -86,11 +92,21 @@ class SignUpFragment : Fragment() {
                             val message = "Account created"
                             val duration = Toast.LENGTH_SHORT
 
+                            //grab userid
+                            val currentUser=auth.currentUser
+                            val reference= FirebaseDatabase.getInstance().getReference("UserTest")
+                            //create user
+                            val user=User(username)
+
+
+                            //store data
+                            currentUser?.uid?.let { reference.child(it).setValue(user) }
+
                             val toast = Toast.makeText(requireContext(), message, duration)
                             toast.show()
 
-                            //Doesnt work yet
-                            // view?.findNavController()?.navigate(R.id.action_signUpFragment_to_loginFragment)
+                            //next page
+                            view?.findNavController()?.navigate(R.id.action_signUpFragment_to_loginFragment)
 
                         } else {
                             // If sign in fails, display a message to the user.
