@@ -15,7 +15,4 @@
 
     </style>
 
-    <style name="Button.Test" parent="ThemeOverlay.AppCompat">
-        <item name="colorPrimary">@color/purple_200</item>
-    </style>
 </resources>
