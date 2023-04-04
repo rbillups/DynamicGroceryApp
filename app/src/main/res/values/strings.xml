@@ -14,7 +14,6 @@
     <string name="login_failed">"Login failed"</string>
     <string name="Logo" />
     <string name="CreateAccount">Create Account</string>
-    <string name="SignIn">     Sign In     </string>
     <string name="ForgotPassword">Forgot Password</string>
     <string name="prompt_passwordRecovery">Password Recovery</string>
     <string name="recover">Recover</string>
@@ -32,6 +31,7 @@
     <string name="friends">Friends</string>
     <string name="profile">Profile</string>
     <string name="sign_up">Sign Up</string>
+    <string name="sign_in">"      Sign In      "</string>
 
 
 </resources>
