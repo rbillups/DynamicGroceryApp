@@ -42,20 +42,13 @@ class SignUpFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         binding = FragmentSignupBinding.inflate(inflater, container, false)
 
-        //get user input
-        val editTextUsername = binding.textFieldUsername
-        val editTextPassword = binding.textFieldPassword
-        val editTextName = binding.textFieldName
-        val editTextEmail = binding.textFieldEmail
-        val editTextPhone = binding.textFieldPhone
-
         binding.signupButton.setOnClickListener {
             //convert inputs to string
-            val username: String = editTextUsername.text.toString()
-            val password: String = editTextPassword.text.toString()
-            val name: String = editTextName.text.toString()
-            val email: String = editTextEmail.text.toString()
-            val phoneNum: String = editTextPhone.text.toString()
+            val username: String = binding.textFieldUsername.text.toString()
+            val password: String = binding.textFieldPassword.text.toString()
+            val name: String = binding.textFieldName.text.toString()
+            val email: String = binding.textFieldEmail.text.toString()
+            val phoneNum: String = binding.textFieldPhone.text.toString()
             var stop: Boolean = true
 
 
