@@ -2,6 +2,8 @@ package com.example.dynamicgroceryapp.ui.signup
 
 import android.content.ContentValues.TAG
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -15,6 +17,8 @@ import com.example.dynamicgroceryapp.R
 import com.example.dynamicgroceryapp.databinding.FragmentSignupBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import java.util.*
 
 
 class SignUpFragment : Fragment() {
@@ -26,6 +30,8 @@ class SignUpFragment : Fragment() {
     private lateinit var viewModel: SignUpViewModel
     private lateinit var binding: FragmentSignupBinding
     private lateinit var auth: FirebaseAuth
+    private lateinit var storage: FirebaseStorage
+    private lateinit var UserImage: Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +48,16 @@ class SignUpFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         binding = FragmentSignupBinding.inflate(inflater, container, false)
 
+        binding.changeImageBtn.setOnClickListener(){
+            val intent = Intent()
+            intent.action = Intent.ACTION_GET_CONTENT
+            intent.type = "image/*"
+            startActivityForResult(intent, 1)
+
+        }
+
+
+        //listener for Sign up button
         binding.signupButton.setOnClickListener {
             //convert inputs to string
             val username: String = binding.textFieldUsername.text.toString()
@@ -71,6 +87,8 @@ class SignUpFragment : Fragment() {
             } else if (phoneNum.isEmpty()) {
                 showToastMessage(requireContext(), "Please enter phoneNum")
 
+            } else if(UserImage == null){
+                showToastMessage(requireContext(), "Please select a profile image")
             } else {
                 stop = false
             }
@@ -88,12 +106,19 @@ class SignUpFragment : Fragment() {
                             //grab userid
                             val currentUser=auth.currentUser
                             val reference= FirebaseDatabase.getInstance().getReference("UserTest")
-                            //create user
-                            val user=User(username)
+                            val storage = FirebaseStorage.getInstance()
 
+                            //create user and store in database
+                            val storageReference = storage.reference.child("Profile").child(Date().time.toString())
+                            storageReference.putFile(UserImage).addOnCompleteListener{
+                                if (it.isSuccessful) {
+                                    storageReference.downloadUrl.addOnSuccessListener { task ->
+                                        val user = User(username, password, name, email, phoneNum, task.toString())
 
-                            //store data
-                            currentUser?.uid?.let { reference.child(it).setValue(user) }
+                                        currentUser?.uid?.let { reference.child(it).setValue(user) }
+                                    }
+                                }
+                            }
 
                             val toast = Toast.makeText(requireContext(), message, duration)
                             toast.show()
@@ -125,6 +150,18 @@ class SignUpFragment : Fragment() {
         val duration = Toast.LENGTH_SHORT
         val toast = Toast.makeText(context, message, duration)
         toast.show()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?){
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (data != null) {
+            if (data.data != null) {
+                UserImage = data.data!!
+
+                binding.userImage.setImageURI(UserImage)
+            }
+        }
     }
 
 }

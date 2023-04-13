@@ -36,6 +36,7 @@
     <string name="description_of_group">Description Of Group</string>
     <string name="add_members">Add Members</string>
     <string name="group_name">Group Name</string>
+    <string name="changeImage">Change Image</string>
 
 
 </resources>
