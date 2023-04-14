@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dynamicgroceryapp.R
@@ -119,7 +120,7 @@ class groupsFragment : Fragment() {
         userAdapter.setOnItemClickListener(object : UserAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
 
-
+                view?.findNavController()?.navigate(R.id.action_appMainFragment_to_groupPage)
             }
         })
 

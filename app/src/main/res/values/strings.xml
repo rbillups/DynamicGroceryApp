@@ -37,6 +37,9 @@
     <string name="add_members">Add Members</string>
     <string name="group_name">Group Name</string>
     <string name="changeImage">Change Image</string>
+    <string name="Members" />
+    <string name="shopping_list">Shopping List</string>
+    <string name="item">item</string>
 
 
 </resources>

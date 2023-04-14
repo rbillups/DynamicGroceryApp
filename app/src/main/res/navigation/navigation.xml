@@ -41,5 +41,14 @@
         android:id="@+id/appMainFragment"
         android:name="com.example.dynamicgroceryapp.ui.appMain.appMainFragment"
         android:label="fragment_app_main"
-        tools:layout="@layout/fragment_app_main" />
+        tools:layout="@layout/fragment_app_main" >
+        <action
+            android:id="@+id/action_appMainFragment_to_groupPage"
+            app:destination="@id/groupPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupPage"
+        android:name="com.example.dynamicgroceryapp.ui.appMain.userGroupScreen.groupPage"
+        android:label="fragment_group_page"
+        tools:layout="@layout/fragment_group_page" />
 </navigation>
