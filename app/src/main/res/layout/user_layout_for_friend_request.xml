@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10sp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="80sp"
+        android:layout_height="80sp"
+        android:layout_margin="20sp"
+        app:cardCornerRadius="10sp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/profilepicture"
+            android:contentDescription="@string/pfp"
+            android:src="@drawable/pfp_placeholder"
+            tools:ignore="ImageContrastCheck" />
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/cardView"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/usernameplaceholder"
+            android:layout_marginTop="5sp"
+            android:text="@string/prompt_username"
+            android:textColor="#757373"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:layout_below="@id/cardView"
+        android:layout_marginStart="90sp"
+        android:background="@color/lightgray"
+        tools:ignore="SmallSp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/acceptbutton"
+        android:layout_width="53dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/cardView"
+        android:layout_marginStart="270sp"
+        android:layout_marginTop="5sp"
+        android:text="@string/Accept"
+        android:textSize="11sp"
+        android:background="#60FF3C" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/rejectbutton"
+        android:layout_width="53dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/cardView"
+        android:layout_toEndOf="@id/acceptbutton"
+        android:text="@string/Reject"
+        android:textSize="11sp"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="5sp"
+        android:background="#FF1414"
+
+        />
+
+
+</RelativeLayout>
+
+
+

@@ -1,18 +1,13 @@
 package com.example.dynamicgroceryapp.ui.appMain
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil.setContentView
-import androidx.navigation.findNavController
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.example.dynamicgroceryapp.R
 import com.example.dynamicgroceryapp.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -24,7 +19,7 @@ class profileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentProfileBinding.inflate(layoutInflater)
 
@@ -45,7 +40,7 @@ class profileFragment : Fragment() {
             Glide.with(this).load(image).into(binding.profilePictureImage)
         }
 
-        binding.logoutBtn.setOnClickListener(){
+        binding.logoutBtn.setOnClickListener {
             signOut()
         }
 

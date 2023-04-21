@@ -5,9 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.example.dynamicgroceryapp.R
-import com.example.dynamicgroceryapp.databinding.FragmentAppMainBinding
 import com.example.dynamicgroceryapp.databinding.FragmentGroupPageBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -78,7 +76,7 @@ class groupPage : Fragment() {
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = requireActivity().supportFragmentManager
         val transaction = fragmentManager.beginTransaction()
-        transaction.replace(R.id.frameLayout2, fragment)
+        transaction.replace(R.id.constraintLayout1, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
     }
