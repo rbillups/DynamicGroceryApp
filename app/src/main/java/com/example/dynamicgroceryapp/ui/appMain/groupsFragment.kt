@@ -69,7 +69,7 @@ class groupsFragment : Fragment() {
             val Ref = FirebaseDatabase.getInstance().getReference("UserTest/$userId/groupIds")
 
             //loop through node and grab data
-            Ref.addValueEventListener(object : ValueEventListener {
+            Ref.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     for (groupSnapshot in dataSnapshot.children) {
                         val groupId = groupSnapshot.key

@@ -7,4 +7,5 @@ class GroupsViewModel : ViewModel() {
 
 
 }
+//group data class
 data class Group(val name: String, val description: String)

@@ -11,7 +11,7 @@ import com.example.dynamicgroceryapp.ui.appMain.profileFragment
 class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
     private val fragments: List<Fragment> = listOf(
-        listFragment(),
+
         groupsFragment(),
         friendsFragment(),
         profileFragment()
