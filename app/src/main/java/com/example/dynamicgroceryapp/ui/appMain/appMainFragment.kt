@@ -44,7 +44,7 @@ class appMainFragment : Fragment() {
         //bottom nav on click
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-
+               // R.id.listBottomNav -> viewPager.currentItem = 0
                 R.id.groupBottomNav -> viewPager.currentItem = 0
                 R.id.friendsBottomNav -> viewPager.currentItem = 1
                 R.id.profileBottomNav -> viewPager.currentItem = 2

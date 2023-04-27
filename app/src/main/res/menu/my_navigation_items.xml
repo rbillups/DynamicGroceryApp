@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-
+        <!--<item
+            android:id="@+id/listBottomNav"
+            android:title="@string/List"
+            android:icon="@drawable/list_icon"/> -->
         <item
             android:id="@+id/groupBottomNav"
             android:title="@string/Groups"
