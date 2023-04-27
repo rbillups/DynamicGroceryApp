@@ -39,7 +39,7 @@
     <string name="changePassword">New Password</string>
     <string name="updateInformation">Update Account</string>
     <string name="logout">Logout</string>
-    <string name="Members" />
+    <string name="Members">Members</string>
     <string name="shopping_list">Shopping List</string>
     <string name="item">item</string>
     <string name="add_friend">Add Friend</string>

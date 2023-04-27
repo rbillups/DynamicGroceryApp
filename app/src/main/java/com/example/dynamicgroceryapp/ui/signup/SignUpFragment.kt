@@ -48,6 +48,7 @@ class SignUpFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         binding = FragmentSignupBinding.inflate(inflater, container, false)
 
+        //Listener for changing profile image
         binding.changeImageBtn.setOnClickListener(){
             val intent = Intent()
             intent.action = Intent.ACTION_GET_CONTENT

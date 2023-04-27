@@ -10,6 +10,6 @@
     <item
         android:id="@+id/Members"
         android:title="@string/Members"
-        android:icon="@drawable/list_icon"/>
+        android:icon="@drawable/groups"/>
 
 </menu>

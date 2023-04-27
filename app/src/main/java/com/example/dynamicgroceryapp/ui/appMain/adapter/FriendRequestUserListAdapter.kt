@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.dynamicgroceryapp.R
@@ -89,6 +90,8 @@ class FriendRequestUserListAdapter(var context: Context, var list: ArrayList<Use
         //Click listener for reject button
         holder.rejectButton.setOnClickListener {
             databaseReference.child(mUser).child("Requests").child(list[position].UID).removeValue()
+
+            Toast.makeText(context, "Friend Request Rejected", Toast.LENGTH_SHORT).show()
         }
     }
 }

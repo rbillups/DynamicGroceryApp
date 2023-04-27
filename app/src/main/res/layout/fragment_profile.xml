@@ -5,6 +5,7 @@
     android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:isScrollContainer="false"
     tools:context=".ui.appMain.profileFragment">
 
     <ImageView
@@ -39,49 +40,45 @@
         android:id="@+id/usernameLabel"
         android:layout_width="78dp"
         android:layout_height="22dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="325dp"
         android:text="@string/prompt_username"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42000002" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/passwordLabel"
         android:layout_width="78dp"
         android:layout_height="22dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="48dp"
         android:text="@string/prompt_password"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameLabel"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintTop_toBottomOf="@+id/usernameLabel" />
 
     <TextView
         android:id="@+id/emailLabel"
         android:layout_width="78dp"
         android:layout_height="22dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="120dp"
         android:text="@string/prompt_email"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameLabel"
-        app:layout_constraintVertical_bias="0.303" />
+        app:layout_constraintTop_toBottomOf="@+id/usernameLabel" />
 
     <TextView
         android:id="@+id/phoneNumLabel"
         android:layout_width="81dp"
         android:layout_height="21dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="196dp"
         android:text="@string/prompt_number"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameLabel"
-        app:layout_constraintVertical_bias="0.474" />
+        app:layout_constraintTop_toBottomOf="@+id/usernameLabel" />
 
     <EditText
         android:id="@+id/tfPassword"

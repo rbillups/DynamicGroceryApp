@@ -57,6 +57,9 @@ class FindFriendsFragment : Fragment() {
             databaseReference.orderByChild("email").equalTo(email)
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
+                        if (!snapshot.exists()) {
+                            Toast.makeText(activity, "User not found", Toast.LENGTH_SHORT).show()
+                        }
                         for (postSnapshot in snapshot.children) {
                             searchID = postSnapshot.key.toString()
                             requestReference =
@@ -66,7 +69,6 @@ class FindFriendsFragment : Fragment() {
                             requestReference.child(mUser).child("Friends").child(searchID)
                                 .addListenerForSingleValueEvent(object : ValueEventListener {
                                     override fun onDataChange(snapshot: DataSnapshot) {
-                                        println(snapshot)
                                         if (snapshot.exists()) {
                                             isFriends = true
                                             Toast.makeText(
@@ -80,7 +82,6 @@ class FindFriendsFragment : Fragment() {
                                             val hashMap: MutableMap<String, String> = HashMap()
                                             hashMap["username"] = username
                                             hashMap["imageUrl"] = imageURL
-                                            println(isFriends)
                                             if (!isFriends) {
                                                 if (searchID != mUser) {
                                                     requestReference.child(searchID)
@@ -116,23 +117,13 @@ class FindFriendsFragment : Fragment() {
                                         Log.w(TAG, "ERROR", error.toException())
                                     }
                                 })
-
-
                         }
                     }
-
                     override fun onCancelled(error: DatabaseError) {
                         Log.w(TAG, "ERROR", error.toException())
                     }
-
                 })
-
         }
-
-
-
-
-
         return binding.root
     }
 }

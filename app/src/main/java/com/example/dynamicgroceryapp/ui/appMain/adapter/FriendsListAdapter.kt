@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.dynamicgroceryapp.R
@@ -59,6 +60,8 @@ class FriendsListAdapter(var context: Context, var list: ArrayList<UserModel>) :
             friendReference.child(list[position].UID).removeValue()
             //Removes friend from others friends list
             databaseReference.child(list[position].UID).child("Friends").child(mUser).removeValue()
+
+            Toast.makeText(context, "User has been removed", Toast.LENGTH_SHORT).show()
         }
     }
 }
